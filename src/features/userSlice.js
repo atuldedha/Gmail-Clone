@@ -19,7 +19,7 @@ export const userSlice = createSlice({
   
   reducers: {
     login: (state, action) => {
-      state.selectMail = action.payload;
+      state.user = action.payload;
     },
 
     logout: (state) => {

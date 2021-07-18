@@ -10,9 +10,8 @@ import {selectSendMessageIsOpen} from './features/mailSlice'
 import {useSelector} from 'react-redux'
 import { login, selectUser } from './features/userSlice';
 import Login from './Login'
-import {useDispatch} from 'react-redux'
-import {auth} from './firebase'
-import 
+import {useDispatch} from 'react-redux';
+import { auth } from './firebase';
 
 function App() {
 
@@ -21,7 +20,7 @@ function App() {
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
 
-  useEffetc(() => {
+  useEffect(() => {
     
     auth.onAuthStateChanged((user) => {
       if(user){
@@ -29,7 +28,7 @@ function App() {
         dispatch(login({
           displayName : user.displayName,
           email: user.email,
-          photoUrl: email.photoUrl
+          photoUrl: user.photoUrl
         }))
 
       }

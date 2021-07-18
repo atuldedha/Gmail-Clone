@@ -9,6 +9,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import { Avatar } from '@material-ui/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { logout, selectUser } from './features/userSlice';
+import { auth } from './firebase';
 
 const Header = () => {
 
@@ -17,7 +18,7 @@ const Header = () => {
 
     const signOut =() => {
 
-        autth.signOut().then(()=>{
+        auth.signOut().then(()=>{
             dispatch(logout())
         })
     
